@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List
-from src.base.base_goods import BaseGood
+from src.base.base_goods import BaseGood, BaseOfferGood
 
 
 class BaseSpecialOffer(ABC):
@@ -14,7 +14,7 @@ class BaseSpecialOffer(ABC):
 
     @property
     @abstractmethod
-    def mock_good(self) -> float:
+    def mock_good(self) -> BaseOfferGood:
         """Goods object which will substitute that goods that are used in offer"""
 
     def apply_an_offer(self, original_goods_list: List[BaseGood]) -> List[BaseGood]:
